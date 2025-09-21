@@ -33,7 +33,7 @@ This pipeline was engineered with scalability in mind, featuring a two-tiered ap
 * Python 3.8+
 * PySpark
 * Java 8+ (Java 17+ recommended for best performance)
-* The [generator script](generator_script.py) to create the 1 billion record dataset for testing at scale.
+* The [generator script](PAN_generator.py) to create the 1 billion record dataset for testing at scale.
 
 ### Instructions
 
@@ -44,12 +44,12 @@ This pipeline was engineered with scalability in mind, featuring a two-tiered ap
     ```
 
 2.  **Generate the Dataset(Optional)**:
-    Run the `generator_script.py` to create the dataset with 1 billion rows for your validation pipeline. If this step is skipped, the default csv with 1 million rows will be used.
+    Run the `PAN_generator.py` to create the dataset with 1 billion rows for your validation pipeline. If this step is skipped, the default csv with 1 million rows will be used.
     
 3.  **Run the Script**:
-    The script will automatically convert the CSV to a Parquet file on its first run for future efficiency.
+    The script will automatically convert the CSV to a Parquet file on its first run for future efficiency. tier1.py can be used to test the script for 1 million rows.
     ```bash
-    spark-submit pan_validation_optimized.py
+    spark-submit tier2.py
     ```
 
 ## Project Structure
